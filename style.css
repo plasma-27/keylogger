@@ -1,16 +1,18 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+body, html {
+    height: 100%;
+    margin: 0;
+}
 
-#main {
+.container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Adjust height as needed */
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
 }
 
-#text {
-    font-size: 5em; /* Very big font size */
+h1 {
+    font-size: 5em;
     text-align: center;
-    color: #000; /* Default color, will be overridden by JavaScript */
 }
+

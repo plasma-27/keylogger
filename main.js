@@ -1,9 +1,29 @@
+let intervalId;
+let currentLetterIndex = 0;
+const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+function iterateLetters() {
+    intervalId = setInterval(() => {
+        const letterElement = document.getElementById('letter');
+        const randomColor = getRandomColor();
+        letterElement.innerText = letters[currentLetterIndex];
+        letterElement.style.color = randomColor; 
+        currentLetterIndex = (currentLetterIndex + 1) % letters.length;
+    }, 50); 
+}
+
 document.addEventListener('keydown', function(event) {
     console.log('Key pressed:', event.key);
-    const pressed = event.key;
-    const word = document.getElementById('text');
-    word.innerText = pressed;
-    word.style.color = getRandomColor(); 
+    clearInterval(intervalId); 
+
+    const pressed = event.key.toUpperCase();
+    const word = document.getElementById('user-letter');
+    word.innerText = `You pressed: ${pressed}`;
+
+    const letterElement = document.getElementById('letter');
+    if (pressed === letterElement.innerText) {
+        alert('You caught the letter!');
+    }
 });
 
 function getRandomColor() {
@@ -14,3 +34,5 @@ function getRandomColor() {
     }
     return color;
 }
+
+window.onload = iterateLetters;
