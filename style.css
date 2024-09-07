@@ -1,18 +1,67 @@
-body, html {
-    height: 100%;
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     margin: 0;
+    background-color: #121212; 
+    color: #e0e0e0; 
 }
 
 .container {
-    display: flex;
-    flex-direction: column; 
-    justify-content: center; 
-    align-items: center; 
-    height: 100vh; 
-}
-
-h1 {
-    font-size: 5em;
     text-align: center;
+    padding: 20px;
+    background-color: #1e1e1e; 
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5); 
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+#main h1, #type h1 {
+    font-size: 3rem;
+    margin: 20px 0;
+    color: #ffffff; 
+
+#slider-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#speed-slider {
+    width: 100%;
+    max-width: 300px; 
+}
+
+#speed-value {
+    margin-top: 5px;
+    font-weight: bold;
+    color: #ffffff; 
+}
+
+#restart-button {
+    padding: 10px 20px;
+    background-color: #4CAF50; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#restart-button:hover {
+    background-color: #45a049; 
+}
+
+#restart-button:active {
+    transform: scale(0.95);
+}
+
+#letter {
+    color: #ffcc00; 
+}
